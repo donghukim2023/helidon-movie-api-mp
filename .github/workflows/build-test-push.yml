@@ -1,4 +1,4 @@
-name: deploy movie service
+name: build movie service
 
 on:
   push:
