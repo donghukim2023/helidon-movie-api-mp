@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout K8s Manifest
-        uses: actions/checkout@v4
+        uses: actions/checkout@v3
         with:
           repository: donghukim2023/movie-k8s-manifest-repo
           token: ${{ secrets.REPOPAT }}
