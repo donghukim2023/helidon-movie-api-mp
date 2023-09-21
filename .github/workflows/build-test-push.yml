@@ -20,11 +20,11 @@ jobs:
       - name: docker build
         id: docker-build
         run: |
-          docker build . -t dandonghukim/helidon-movie-api-mp:${{ github.sha }}
+          docker build . -t icn.ocir.io/axlpeslmb1ng/movie/helidon-movie-api-mp:${{ github.sha }}
       - name: docker push
         id: docker-push
         run: |
-          docker push dandonghukim/helidon-movie-api-mp:${{ github.sha }}
+          docker push icn.ocir.io/axlpeslmb1ng/movie/helidon-movie-api-mp:${{ github.sha }}
       - name: Checkout K8s Manifest
         uses: actions/checkout@v4
         with:
