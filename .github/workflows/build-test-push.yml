@@ -11,10 +11,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout K8s Manifest
-        uses: actions/checkout@v3
+        uses: actions/checkout@v2
         with:
           repository: donghukim2023/movie-k8s-manifest-repo
-          token: ${{ secrets.REPOPAT }}
+          token: ${{ secrets.GIT_REPOPAT }}
       - name: Change config repo manifest
         uses: mikefarah/yq@master
         with:
