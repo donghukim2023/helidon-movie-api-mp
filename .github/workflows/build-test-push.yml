@@ -15,13 +15,13 @@ jobs:
       - name: Change config repo manifest
         uses: mikefarah/yq@master
         with:
-          cmd: yq -i '.spec.template.spec.containers.[0].image = "dandonghukim/helidon-movie-api-mp:${{ github.sha }}"' kube-helidon-movie-api-mp-config.yml
+          cmd: yq -i '.spec.template.spec.containers.[0].image = "dandonghukim/helidon-movie-api-mp:${{ github.sha }}"' manifest/kube-helidon-movie-api-mp-config.yml
       - name: Pushes to config repository
         uses: cpina/github-action-push-to-another-repository@main
         env:
           API_TOKEN_GITHUB: ${{ secrets.GIT_REPOPAT }}
         with:
-          source-directory: "."
+          source-directory: "manifest"
           destination-github-username: "donghukim2023"
           destination-repository-name: "movie-k8s-manifest-repo"
           user-email: "dan.donghu.kim@gmail.com"
