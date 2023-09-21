@@ -34,7 +34,7 @@ jobs:
       - name: Change config repo manifest
         uses: mikefarah/yq@master
         with:
-          cmd: yq -i '.spec.template.spec.containers.[0].image = "dandonghukim/helidon-movie-api-mp:${{ github.sha }}"' kube-helidon-movie-api-mp-deployment.yml
+          cmd: yq -i '.spec.template.spec.containers.[0].image = "dandonghukim/helidon-movie-api-mp:${{ github.sha }}"' .production/kube-helidon-movie-api-mp-deployment.yml
       - name: Pushes to config repository
         run: |
           git add .
